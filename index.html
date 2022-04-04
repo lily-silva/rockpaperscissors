@@ -19,11 +19,6 @@
       .hide {
         display: none;
       }
-
-      #again {
-        visibility: hidden;
-      }
-
     </style>
   </head>
 
@@ -43,8 +38,9 @@
       <!-- start / repeat game -->
       <div class="mb-4">
         <button style="margin-top: 20px" id="start" class="btn btn-secondary" onclick="game()">Start Game!</button>
-        <button style="margin-top: 20px" id="again" class="btn btn-secondary" onclick="game()">Again!</button>
-        <button style="margin-top: 20px" id="restart" class="btn btn-secondary" onclick="restart()">Another Match?</button>
+        <button style="margin-top: 20px" id="again" class="btn btn-secondary hide" onclick="game()">Again!</button>
+        <button style="margin-top: 20px" id="restart" class="btn btn-secondary hide" onclick="restart()">Another Match?</button>
+        <button style="margin-top: 20px" id="end" class="btn btn-secondary hide" onclick="end()">No, thanks</button>
       </div>
 
       <!-- buttons / weapons -->
