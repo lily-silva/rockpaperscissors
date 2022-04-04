@@ -55,33 +55,53 @@ function disable(ele) {
 }
 
 function game() {
-  const start = document.getElementById('start')
-  const again = document.getElementById('again')
-  const restart = document.getElementById('restart')
 
   weapons.forEach(el => el.style.visibility = 'visible')
   weapons.forEach(el => el.disabled = false)
 
   if (pScore < 5 && cScore < 5 && round < 5) {
     start.style.display = 'none'
+    again.style.display = 'inline'
     restart.style.display = 'none'
-    again.style.visibility = 'visible'
   } else {
     again.style.display = 'none'
     weapons.forEach(el => el.style.visibility = 'hidden')
     document.getElementById('roundWinner').textContent = pScore > cScore ? ' The player won' : ' The computer won' 
-    restart.style.display = 'initial'
+    restart.style.display = 'inline'
+    end.style.display = "inline"
   }
 }
 
 function restart() {
   const restart = document.getElementById('restart')
-  restart.style.display = 'none'
+  const again = document.getElementById('again')
+  restart.style.display = 'inline'
+
   round = 0
   pScore = 0
   cScore = 0
+
   gameRound.textContent = round
   pyScore.textContent = pScore
   robotScore.textContent = cScore
+  
   game()
+}
+
+function end() {
+  const start = document.getElementById('start')
+  const end = document.getElementById('end')
+  const restart = document.getElementById('restart')
+  document.getElementById('roundWinner').textContent = null
+  start.style.display = 'inline'
+  end.style.display = "none"
+  restart.style.display = "none"
+
+  round = 0
+  pScore = 0
+  cScore = 0
+
+  gameRound.textContent = round
+  pyScore.textContent = pScore
+  robotScore.textContent = cScore
 }
