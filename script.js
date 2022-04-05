@@ -55,6 +55,10 @@ function disable(ele) {
 }
 
 function game() {
+  const restart = document.getElementById('restart')
+  const again = document.getElementById('again')
+  const start = document.getElementById('start')
+  const end = document.getElementById('end')
 
   weapons.forEach(el => el.style.visibility = 'visible')
   weapons.forEach(el => el.disabled = false)
@@ -74,7 +78,6 @@ function game() {
 
 function restart() {
   const restart = document.getElementById('restart')
-  const again = document.getElementById('again')
   restart.style.display = 'inline'
 
   round = 0
